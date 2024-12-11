@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y \
 
 # Copy the application files into the container
 COPY . .
-
+RUN curl -o models/random_forest_model.pk1 "https://hecparis-my.sharepoint.com/:f:/g/personal/rayan_souissi_hec_edu/ErwnO-fuyMVMr67TIId_RTgB5sckpRAgcDuzgoiiB9mDhg?e=f5sYau"
+#kkk
 # Run FastAPI on container startup
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
