@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIMO - Property Value Estimator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 0;
+            color: #467A5A; /* Pine Green */
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: normal;
+            margin: 20px 0 50px;
+            color: #BBBBBB;
+        }
+
+        button {
+            background-color: #467A5A; /* Pine Green */
+            color: #FFFFFF;
+            border: none;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3A6B53; /* Slightly darker Pine Green */
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(70, 122, 90, 0.5);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 60px;
+            }
+            h2 {
+                font-size: 18px;
+                margin: 15px 0 40px;
+            }
+            button {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>AIMO</h1>
+        <h2>Estimate the value of your property</h2>
+        <button onclick="redirectToForm()">Estimate</button>
+    </div>
+
+    <script>
+        function redirectToForm() {
+            window.location.href = "form.html"; // Adjust path if needed
+        }
+    </script>
+
+</body>
+</html>
