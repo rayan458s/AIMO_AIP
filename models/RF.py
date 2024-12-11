@@ -1,8 +1,8 @@
-from AIMO import data
-from AIMO import data
+
 import pandas as pd
-import seaborn as sns
+#import seaborn as sns
 import matplotlib.pyplot as plt
+import sklearn
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import joblib
@@ -16,10 +16,10 @@ columns_to_keep = [
 ]
 
 # Load data
-x_train_raw = pd.read_csv('/AIMO_AIP/data/X_train.csv')
-y_train_raw = pd.read_csv('/AIMO_AIP/data/y_train.csv')
-x_test_raw = pd.read_csv('/AIMO_AIP/data/X_test.csv')
-y_test_raw = pd.read_csv('/AIMO_AIP/data/y_test.csv')
+x_train_raw = pd.read_csv('/Users/rayan/PycharmProjects/AIMO_AIP/data/X_train.csv')
+y_train_raw = pd.read_csv('/Users/rayan/PycharmProjects/AIMO_AIP/data/y_train.csv')
+x_test_raw = pd.read_csv('/Users/rayan/PycharmProjects/AIMO_AIP/data/X_test.csv')
+y_test_raw = pd.read_csv('/Users/rayan/PycharmProjects/AIMO_AIP/data/y_test.csv')
 
 
 # Sort X and Y by id_announce
@@ -76,7 +76,7 @@ print("\nStarting training the model...")
 rf_model.fit(x_train, y_train)
 
 # Save the model to a file
-joblib.dump(rf_model, 'random_forest_model.pk1')
+joblib.dump((rf_model, sklearn.__version__), "random_forest_model.pk1")
 print("\nModel saved successfully.")
 
 # Make predictions on the test set
